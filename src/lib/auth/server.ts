@@ -57,7 +57,7 @@ export const auth = betterAuth({
   },
   account: {
     accountLinking: {
-      trustedProviders: ["google", "github"],
+      trustedProviders: ["google", "github", "azure-ad"],
     },
   },
   fetchOptions: {
@@ -76,6 +76,11 @@ export const auth = betterAuth({
       prompt: "select_account",
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+    },
+    "azure-ad": {
+      tenantId: process.env.MICROSOFT_TENANT_ID || "common",
+      clientId: process.env.MICROSOFT_CLIENT_ID || "",
+      clientSecret: process.env.MICROSOFT_CLIENT_SECRET || "",
     },
   },
   hooks: {
