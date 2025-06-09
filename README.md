@@ -187,11 +187,14 @@ FILE_BASED_MCP_CONFIG=false
 
 # (Optional)
 # === OAuth Settings ===
-# Fill in these values only if you want to enable Google/GitHub login
+# Fill in these values only if you want to enable Google/GitHub/Microsoft login
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
+MICROSOFT_CLIENT_ID=
+MICROSOFT_CLIENT_SECRET=
+MICROSOFT_TENANT_ID=
 ```
 
 <br/>
@@ -219,7 +222,7 @@ Step-by-step setup guides for running and configuring MCP Client Chatbot.
 
 #### [🔐 OAuth Sign-In Setup](./docs/tips-guides/oauth.md)
 
-- Configure Google and GitHub OAuth for secure user login support.
+- Configure Google, GitHub, and Microsoft OAuth for secure user login support.
 
 <br/>
 

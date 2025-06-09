@@ -20,6 +20,7 @@ import { authClient } from "auth/client";
 import { toast } from "sonner";
 import { GithubIcon } from "ui/github-icon";
 import { GoogleIcon } from "ui/google-icon";
+import { MicrosoftIcon } from "ui/microsoft-icon";
 import { useTranslations } from "next-intl";
 
 export default function SignInPage() {
@@ -70,6 +71,18 @@ export default function SignInPage() {
     authClient.signIn
       .social({
         provider: "github",
+      })
+      .catch((e) => {
+        toast.error(e.error);
+      });
+  };
+
+  const microsoftSignIn = () => {
+    if (!process.env.NEXT_PUBLIC_MICROSOFT_CLIENT_ID)
+      return toast.warning(t("oauthClientIdNotSet", { provider: "Microsoft" }));
+    authClient.signIn
+      .social({
+        provider: "azure-ad",
       })
       .catch((e) => {
         toast.error(e.error);
@@ -152,6 +165,10 @@ export default function SignInPage() {
             <Button variant="outline" onClick={githubSignIn} className="flex-1">
               <GithubIcon className="size-4 fill-foreground" />
               GitHub
+            </Button>
+            <Button variant="outline" onClick={microsoftSignIn} className="flex-1">
+              <MicrosoftIcon className="size-4 fill-foreground" />
+              Microsoft
             </Button>
           </div>
 
