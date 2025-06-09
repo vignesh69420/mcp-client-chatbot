@@ -35,8 +35,6 @@ import { useTranslations } from "next-intl";
 import useSWR from "swr";
 import { getLocaleAction } from "@/i18n/get-locale";
 import { useCallback } from "react";
-import { GithubIcon } from "ui/github-icon";
-import { DiscordIcon } from "ui/discord-icon";
 
 export function AppSidebarUser() {
   const appStoreMutate = appStore((state) => state.mutate);
@@ -114,25 +112,6 @@ export function AppSidebarUser() {
             >
               <Command className="size-4 text-foreground" />
               <span>{t("keyboardShortcuts")}</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => {
-                window.open(
-                  "https://github.com/cgoinglove/mcp-client-chatbot/issues/new",
-                  "_blank",
-                );
-              }}
-            >
-              <GithubIcon className="size-4 fill-foreground" />
-              <span>{t("reportAnIssue")}</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => {
-                window.open("https://discord.gg/gCRu69Upnp", "_blank");
-              }}
-            >
-              <DiscordIcon className="size-4 fill-foreground" />
-              <span>{t("joinCommunity")}</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={logout} className="cursor-pointer">
