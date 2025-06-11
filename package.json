@@ -28,6 +28,7 @@
     "db:check": "drizzle-kit check",
     "docker-compose:up": "docker-compose -f docker/compose.yml up -d --build",
     "docker-compose:down": "docker-compose -f docker/compose.yml down",
+    "docker-compose:uponly": "docker-compose -f docker/compose.yml up",
     "docker-compose:logs": "docker-compose -f docker/compose.yml logs -f",
     "docker-compose:ps": "docker-compose -f docker/compose.yml ps",
     "docker-compose:update": "git pull && docker-compose -f docker/compose.yml up -d --build",

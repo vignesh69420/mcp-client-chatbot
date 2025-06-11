@@ -42,6 +42,34 @@ GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
+### Get your Microsoft credentials
+To use Microsoft sign in, register an app in the [Azure Portal](https://portal.azure.com).
+
+- For local development, set the redirect URL to:
+  - `http://localhost:3000/api/auth/callback/azure-ad`
+- For production, set it to your deployed application's URL, e.g.:
+  - `https://your-domain.com/api/auth/callback/azure-ad`
+- Add your credentials to your `.env` file:
+  ```
+  MICROSOFT_CLIENT_ID=your_client_id
+  MICROSOFT_CLIENT_SECRET=your_client_secret
+  MICROSOFT_TENANT_ID=your_tenant_id
+  ```
+
+## Environment Variable Check
+
+Make sure your `.env` file contains the following variables:
+
+```
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+MICROSOFT_CLIENT_ID=your_microsoft_client_id
+MICROSOFT_CLIENT_SECRET=your_microsoft_client_secret
+MICROSOFT_TENANT_ID=your_microsoft_tenant_id
+```
+
 ## Done
 
-You can now sign in to MCP Client Chatbot using your Google or GitHub account. Restart the application to apply the changes. 
+You can now sign in to MCP Client Chatbot using your Google, GitHub, or Microsoft account. Restart the application to apply the changes.

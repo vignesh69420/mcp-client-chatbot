@@ -57,7 +57,7 @@ export const auth = betterAuth({
   },
   account: {
     accountLinking: {
-      trustedProviders: ["google", "github"],
+      trustedProviders: ["google", "github","microsoft"],
     },
   },
   fetchOptions: {
@@ -77,7 +77,13 @@ export const auth = betterAuth({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     },
+      microsoft: {
+      tenantId: process.env.MICROSOFT_TENANT_ID || "common",
+      clientId: process.env.MICROSOFT_CLIENT_ID || "",
+      clientSecret: process.env.MICROSOFT_CLIENT_SECRET || "",
+    },
   },
+
   hooks: {
     async before(inputContext) {
       return v1_4_0_user_migrate_middleware(inputContext);

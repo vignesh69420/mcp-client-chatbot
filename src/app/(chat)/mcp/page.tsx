@@ -36,12 +36,12 @@ export default function Page() {
 
           <div className="flex gap-2">
             <Link
-              href="https://smithery.ai/"
+              href=""
               target="_blank"
               className="hidden sm:block"
             >
               <Button className="font-semibold" variant={"ghost"}>
-                {t("marketplace")}
+                {t("Connectors")}
               </Button>
             </Link>
             <Link href="/mcp/create">
